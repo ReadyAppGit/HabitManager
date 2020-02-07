@@ -1,7 +1,5 @@
 {
   "name": "HabitManager",
-  "integrations": {
-    "capacitor": {}
-  },
+  "integrations": {},
   "type": "angular"
 }

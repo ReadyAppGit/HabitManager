@@ -1,28 +1,42 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
 
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <div>
-            <ion-icon name="arrow-round-back" (click)="dismiss()"></ion-icon>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="ion-text-center">
-            <ion-title>NewTask</ion-title>
-          </div>
-        </ion-col>
-        <ion-col class="ion-text-end">
-          <div>
-            <ion-icon name="checkmark"></ion-icon>
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <ion-title text-center>New Task</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<!-- AQUI COLOCAR EL CONTENIDO DEL MODAL COMO TAL -->
+  <hr>
+  <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    <ion-item>
+      <ion-label position="floating">New Task</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <hr>
+    <ion-item>
+      <ion-label>Deadline</ion-label>
+      <ion-datetime></ion-datetime>
+    </ion-item>
+    <hr>
+    <ion-item>
+      <ion-select value="work" interface="popover">
+        <ion-select-option value="work">Work</ion-select-option>
+        <ion-select-option value="college">College</ion-select-option>
+        <ion-select-option value="home">Home</ion-select-option>
+        <ion-select-option value="groceries">Groceries</ion-select-option>
+        <ion-select-option value="new-list">New List</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
 </ion-content>

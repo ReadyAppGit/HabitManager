@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      To Do 
+      My To-Do List
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -35,10 +35,22 @@
     <ion-item>
       <ion-grid>
         <ion-row>
-          <ion-col><ion-label style="text-decoration: line-through;">Task 2</ion-label></ion-col>
+          <ion-col><ion-label>Task 2</ion-label></ion-col>
         </ion-row>
         <ion-row>
-          <ion-col><ion-label style="font-size: small;">Jue, 15 Feb</ion-label></ion-col>
+          <ion-col><ion-label style="font-size: small;">2 days left</ion-label></ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-checkbox slot="start"></ion-checkbox> 
+    </ion-item>
+
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col><ion-label style="text-decoration: line-through;">Task 3</ion-label></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><ion-label style="font-size: small;">Finished on Fri, 15 Feb</ion-label></ion-col>
         </ion-row>
       </ion-grid>
       <ion-checkbox slot="start"></ion-checkbox>
@@ -46,10 +58,10 @@
     <ion-item>
       <ion-grid>
         <ion-row>
-          <ion-col><ion-label style="color: darkred;">Task 3</ion-label></ion-col>
+          <ion-col><ion-label style="color: darkred;">Task 4</ion-label></ion-col>
         </ion-row>
         <ion-row>
-          <ion-col><ion-label style="font-size: small; color: darkred;">Delay by 2 days</ion-label></ion-col>
+          <ion-col><ion-label style="font-size: small; color: darkred;">3 days late</ion-label></ion-col>
         </ion-row>
       </ion-grid>
       <ion-checkbox slot="start"></ion-checkbox>

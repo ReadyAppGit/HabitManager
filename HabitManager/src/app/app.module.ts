@@ -10,6 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewTaskPageModule } from './tab1/new-task/new-task.module';
 
+//SQLITE PARA ALMACENAR LOS DATOS
+import { SQLite } from '@ionic-native/sqlite/ngx';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -17,7 +21,8 @@ import { NewTaskPageModule } from './tab1/new-task/new-task.module';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    SQLite
   ],
   bootstrap: [AppComponent]
 })

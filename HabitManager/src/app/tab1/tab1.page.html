@@ -20,7 +20,27 @@
       </ion-select>
     </ion-item>
 
-    <ion-item>
+  
+
+
+    <ion-item *ngFor="let task of tasks">
+      
+      <ion-grid>
+        <ion-row>
+          <ion-col><ion-label>{{task.title}}</ion-label></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><ion-label style="font-size: small;">{{task.date}}</ion-label></ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-checkbox slot="start"></ion-checkbox> 
+    </ion-item>
+
+
+
+    
+    <!-- <ion-item>
+      
       <ion-grid>
         <ion-row>
           <ion-col><ion-label>Task 1</ion-label></ion-col>
@@ -65,11 +85,17 @@
         </ion-row>
       </ion-grid>
       <ion-checkbox slot="start"></ion-checkbox>
-    </ion-item>
+    </ion-item> -->
+
+
+
+
+
+    
   </ion-list>
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
     <ion-fab-button>
       <ion-icon name="add" (click)="presentModal()"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab>      
 </ion-content>

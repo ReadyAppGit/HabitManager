@@ -1,5 +1,7 @@
 {
   "name": "HabitManager",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

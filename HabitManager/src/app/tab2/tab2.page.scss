@@ -1,13 +1,17 @@
 * {
     box-sizing: border-box;
-  }
-  
+}
+
+ion-card{
+    --background: white;
+}
+
 .square-container {
-    padding: 8px;
+    margin-top: 8px;
 }
 
 .square {
-    width: calc(100% / 8);
+    width: calc(100% / 7);
     float: left;
     position: relative;
     padding-bottom: calc(100% / 6);
@@ -16,7 +20,7 @@
 .square .content {
     // width: calc(100% - 32px);
     // height: calc(100% - 32px);
-    border-radius: 100%;
+    border-radius: 35%;
     margin: 8px;
     padding: 16px;
     position: absolute;
@@ -39,8 +43,4 @@
     --ion-color-contrast-rgb: 0,0,0;
     --ion-color-shade: #cf575e;
     --ion-color-tint: #ed737a;
-}
-
-ion-card{
-    --background: white;
 }

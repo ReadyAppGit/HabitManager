@@ -19,21 +19,23 @@ export class Tab1Page {
   }
 
   listTasksFromDB() {
-    this.servicios.getRows().then((res) => {
+    this.tasks=[{title:"meh",state:"unfinished",category:"work",date:new Date()}];
 
-      this.zone.run(() => {
-        let row_data = [];
-        if (res.rows.length > 0) {
-          for (var i = 0; i < res.rows.length; i++) {
-            row_data.push(res.rows.item(i));
-          }
-        }
-        this.tasks = row_data;
-      });
-    })
-      .catch(e => {
-        alert("error " + JSON.stringify(e))
-      });
+    // this.servicios.getRows().then((res) => {
+
+    //   this.zone.run(() => {
+    //     let row_data = [];
+    //     if (res.rows.length > 0) {
+    //       for (var i = 0; i < res.rows.length; i++) {
+    //         row_data.push(res.rows.item(i));
+    //       }
+    //     }
+    //     this.tasks = row_data;
+    //   });
+    // })
+    //   .catch(e => {
+    //     alert("error " + JSON.stringify(e))
+    //   });
   }
 
 }

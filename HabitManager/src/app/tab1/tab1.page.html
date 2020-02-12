@@ -23,7 +23,7 @@
   
 
 
-    <ion-item *ngFor="let task of tasks">
+    <!-- <ion-item *ngFor="let task of tasks">
       
       <ion-grid>
         <ion-row>
@@ -34,10 +34,9 @@
         </ion-row>
       </ion-grid>
       <ion-checkbox slot="start"></ion-checkbox> 
-    </ion-item>
+    </ion-item> -->
 
-
-
+      <app-task *ngFor="let task of tasks" [title]="task.title" [state]="task.state" [category]="task.category" [date]="task.date" ></app-task>
     
     <!-- <ion-item>
       

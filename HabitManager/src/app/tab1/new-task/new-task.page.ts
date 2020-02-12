@@ -6,12 +6,13 @@ import { ModalController } from '@ionic/angular';
   templateUrl: './new-task.page.html',
   styleUrls: ['./new-task.page.scss'],
 })
-export class NewTaskPage implements OnInit {
+export class NewTaskPage {
 
   constructor(public modalController: ModalController) {
 
   }
-  ngOnInit() {
+  ionViewDidEnter() {
+    console.log("ENTRA A NEW TASK")
   }
 
   dismiss() {

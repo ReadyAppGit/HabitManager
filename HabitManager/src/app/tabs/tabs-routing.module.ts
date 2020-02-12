@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { Tab1Page } from '../tab1/tab1.page';
+import { NewTaskPage } from '../tab1/new-task/new-task.page';
 
 const routes: Routes = [
   {
@@ -12,8 +14,11 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+            component: Tab1Page
+          },
+          {
+            path: 'new-task',
+            component: NewTaskPage
           }
         ]
       },

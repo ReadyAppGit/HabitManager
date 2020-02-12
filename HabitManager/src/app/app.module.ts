@@ -8,7 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NewTaskPageModule } from './tab1/new-task/new-task.module';
+// import { NewTaskPageModule } from './tab1/new-task/new-task.module';
 
 //SQLITE PARA ALMACENAR LOS DATOS
 import { SQLite } from '@ionic-native/sqlite/ngx';
@@ -17,7 +17,7 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,NewTaskPageModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,

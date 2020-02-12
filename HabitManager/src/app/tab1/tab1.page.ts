@@ -1,5 +1,4 @@
-import { Component, NgZone } from '@angular/core';
-import { NewTaskPage } from './new-task/new-task.page';
+import { Component, NgZone, ɵConsole } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { DatabaseService } from '../database.service';
 
@@ -15,6 +14,7 @@ export class Tab1Page {
 
   }
   ionViewDidEnter() {
+    console.log("ENTRA AL TAB1");
     this.listTasksFromDB();
   }
 
@@ -36,10 +36,4 @@ export class Tab1Page {
       });
   }
 
-  async presentModal() {
-    const modal = await this.modalController.create({
-      component: NewTaskPage
-    });
-    return await modal.present();
-  }
 }

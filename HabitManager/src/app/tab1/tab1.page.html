@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar color="primary">
     <ion-title>
       My To-Do List
@@ -6,96 +6,81 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <!-- List of Input Items -->
-  <ion-list>
-    <ion-item>
-      <ion-select value="all" interface="popover">
-        <ion-select-option value="all">All</ion-select-option>
-        <ion-select-option value="work">Work</ion-select-option>
-        <ion-select-option value="college">College</ion-select-option>
-        <ion-select-option value="home">Home</ion-select-option>
-        <ion-select-option value="groceries">Groceries</ion-select-option>
-        <ion-select-option value="new-list">New List</ion-select-option>
-      </ion-select>
-    </ion-item>
+<ion-content color="light">
+  <ion-item color="primary">
+    <ion-select value="all" interface="popover">
+      <ion-select-option value="all">All</ion-select-option>
+      <ion-select-option value="work">Work</ion-select-option>
+      <ion-select-option value="college">College</ion-select-option>
+      <ion-select-option value="home">Home</ion-select-option>
+      <ion-select-option value="groceries">Groceries</ion-select-option>
+      <ion-select-option value="new-list">New List</ion-select-option>
+    </ion-select>
+  </ion-item>
 
-  
+  <ion-item class="task" *ngFor="let task of tasks">
+    <ion-grid>
+      <ion-row>
+        <ion-col><ion-label>{{task.title}}</ion-label></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-label style="font-size: small;">{{task.date}}</ion-label></ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-checkbox slot="start"></ion-checkbox> 
+  </ion-item>
 
+  <ion-item class="task" lines="none">
+    <ion-grid>
+      <ion-row>
+        <ion-col><ion-label>Task 1</ion-label></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-label style="font-size: small;">Today</ion-label></ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-checkbox slot="start"></ion-checkbox> 
+  </ion-item>
 
-    <ion-item *ngFor="let task of tasks">
-      
-      <ion-grid>
-        <ion-row>
-          <ion-col><ion-label>{{task.title}}</ion-label></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col><ion-label style="font-size: small;">{{task.date}}</ion-label></ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-checkbox slot="start"></ion-checkbox> 
-    </ion-item>
+  <ion-item class="task" lines="none">
+    <ion-grid>
+      <ion-row>
+        <ion-col><ion-label>Task 2</ion-label></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-label style="font-size: small;">2 days left</ion-label></ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-checkbox slot="start"></ion-checkbox> 
+  </ion-item>
 
+  <ion-item class="task" lines="none">
+    <ion-grid>
+      <ion-row>
+        <ion-col><ion-label style="text-decoration: line-through;">Task 3</ion-label></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-label style="font-size: small;">Finished on Fri, 15 Feb</ion-label></ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-checkbox slot="start"></ion-checkbox>
+  </ion-item>
 
+  <ion-item class="task" lines="none">
+    <ion-grid>
+      <ion-row>
+        <ion-col><ion-label style="color: darkred;">Task 4</ion-label></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-label style="font-size: small; color: darkred;">3 days late</ion-label></ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-checkbox slot="start"></ion-checkbox>
+  </ion-item>
 
-    
-    <!-- <ion-item>
-      
-      <ion-grid>
-        <ion-row>
-          <ion-col><ion-label>Task 1</ion-label></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col><ion-label style="font-size: small;">Today</ion-label></ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-checkbox slot="start"></ion-checkbox> 
-    </ion-item>
-
-    <ion-item>
-      <ion-grid>
-        <ion-row>
-          <ion-col><ion-label>Task 2</ion-label></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col><ion-label style="font-size: small;">2 days left</ion-label></ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-checkbox slot="start"></ion-checkbox> 
-    </ion-item>
-
-    <ion-item>
-      <ion-grid>
-        <ion-row>
-          <ion-col><ion-label style="text-decoration: line-through;">Task 3</ion-label></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col><ion-label style="font-size: small;">Finished on Fri, 15 Feb</ion-label></ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-checkbox slot="start"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-grid>
-        <ion-row>
-          <ion-col><ion-label style="color: darkred;">Task 4</ion-label></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col><ion-label style="font-size: small; color: darkred;">3 days late</ion-label></ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-checkbox slot="start"></ion-checkbox>
-    </ion-item> -->
-
-
-
-
-
-    
-  </ion-list>
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add" routerLink="/tabs/tab1/new-task"></ion-icon>
+    <ion-fab-button color="secondary2" routerLink="/tabs/tab1/new-task">
+      <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>      
 </ion-content>

@@ -1,19 +1,27 @@
 .welcome-card img {
-    max-height: 35vh;
-    overflow: hidden;
-  }
-  
-  .task{
-    margin: 15px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); 
-    border-radius: 4%;
-  }
-  
-  .ion-color-secondary2 {
-    --ion-color-base: #eb636b;
-    --ion-color-base-rgb: 255,255,0;
-    --ion-color-contrast: #ffffff;
-    --ion-color-contrast-rgb: 0,0,0;
-    --ion-color-shade: #cf575e;
-    --ion-color-tint: #ed737a;
-  }
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+.task{
+  margin: 15px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); 
+  border-radius: 4%;
+}
+
+.ion-color-secondary2 {
+  --ion-color-base: #eb636b;
+  --ion-color-base-rgb: 255,255,0;
+  --ion-color-contrast: #ffffff;
+  --ion-color-contrast-rgb: 0,0,0;
+  --ion-color-shade: #cf575e;
+  --ion-color-tint: #ed737a;
+}
+
+.finished>ion-row:first-child{
+      text-decoration: line-through;
+}
+.unfinishedLate{
+  color: darkred;
+}
+

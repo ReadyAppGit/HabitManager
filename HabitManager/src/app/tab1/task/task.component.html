@@ -1,5 +1,5 @@
 <ion-item class="task" lines="none">
-  <ion-grid>
+  <ion-grid [ngClass]="{'finished':state=='finished','unfinishedLate':state=='unfinished' && daysLeft<0}">
     <ion-row>
       <ion-col><ion-label>{{title}}</ion-label></ion-col>
     </ion-row>

@@ -15,14 +15,14 @@ export class TaskComponent implements OnInit {
   private daysLeft = 0;
   private dateTransformated;
   constructor() { }
-
+ 
   ngOnInit() {
     this.transformTheDate();
   }
 
   transformTheDate() {
     this.date = new Date(this.date);
-    if (this.state = "finished") {
+    if (this.state == "finished") {
       this.dateTransformated = "Finished on " + this.date.toDateString();
     } else {
       let TodayDate = new Date().getTime();
@@ -32,7 +32,7 @@ export class TaskComponent implements OnInit {
       if(this.daysLeft==0){this.dateTransformated="Today"}
       if(this.daysLeft==1){this.dateTransformated="Tomorrow"}
       if(this.daysLeft>1){this.dateTransformated=this.daysLeft+" days left"}
-      if(this.daysLeft<0){this.dateTransformated=this.daysLeft+" days late"}
+      if(this.daysLeft<0){this.dateTransformated=-1*this.daysLeft+" days late"}
     }
 
   }

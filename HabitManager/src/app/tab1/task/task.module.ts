@@ -7,7 +7,7 @@ import {TaskComponent} from './task.component';
 @NgModule({
   imports: [
     CommonModule,
-    // FormsModule,
+    FormsModule,
     IonicModule
   ],
   exports:[TaskComponent],

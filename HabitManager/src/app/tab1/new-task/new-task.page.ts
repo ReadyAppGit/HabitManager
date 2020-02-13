@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { DatabaseService } from '../../database.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-task',
@@ -8,19 +10,28 @@ import { ModalController } from '@ionic/angular';
 })
 export class NewTaskPage {
 
-  constructor(public modalController: ModalController) {
+  private title;
+  private state = "unfinished";
+  private category;
+  private date;
+  constructor(public modalController: ModalController, public servicio: DatabaseService, public router: Router) {
 
   }
   ionViewDidEnter() {
     console.log("ENTRA A NEW TASK")
   }
 
-  dismiss() {
-    // using the injected ModalController this page
-    // can "dismiss" itself and optionally pass back data
-    this.modalController.dismiss({
-      'dismissed': true
-    });
+  createTask() {
+    console.log([this.title, this.state, this.category, this.date]);
+    this.servicio.insertRow(this.title, this.state, this.category, this.date)
+      .then(() => {
+        alert('Row Inserted!');
+        this.router.navigate(['/tabs/tab1']);
+      })
+      .catch(e => {
+        alert("error " + JSON.stringify(e))
+      });
+
   }
 
 }

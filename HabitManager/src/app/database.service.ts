@@ -36,26 +36,20 @@ export class DatabaseService {
   createOrReadTable() {
     this.databaseObj.executeSql('CREATE TABLE IF NOT EXISTS task (id INTEGER PRIMARY KEY, title varchar(50),state varchar(20),category varchar(20), date varchar(50) )', [])
       .then(() => {
-        this.insertRow("tarea1","pending","work",new Date().toString());
+        // this.insertRow("tarea1","pending","work",new Date().toString());
         // this.insertRow("tarea2","pending",new Date().toString());
 
         // alert('Table Created!');
       })
       .catch(e => {
         alert("error " + JSON.stringify(e))
-      });
+      }); 
   }
 
 
 
-  insertRow(name,state,category,date) {
-    this.databaseObj.executeSql('INSERT INTO task (title,state,category,date) VALUES ("' + name + '","'+state+'","'+category+'","' + date + '")', [])
-      .then(() => {
-        alert('Row Inserted!');
-      })
-      .catch(e => {
-        alert("error " + JSON.stringify(e))
-      });
+  insertRow(title,state,category,date) {
+    return this.databaseObj.executeSql('INSERT INTO task (title,state,category,date) VALUES ("' + title + '","'+state+'","'+category+'","' + date + '")', []);
   }
 
 

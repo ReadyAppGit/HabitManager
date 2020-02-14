@@ -8,13 +8,15 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 import { TabsPage } from './tabs.page';
 import { Tab1Page } from '../tab1/tab1.page';
 import { NewTaskPage } from '../tab1/new-task/new-task.page';
+import { taskPageModule } from '../tab1/task/task.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    TabsPageRoutingModule
+    TabsPageRoutingModule,
+    taskPageModule
   ],
   declarations: [TabsPage,Tab1Page,NewTaskPage]
 })

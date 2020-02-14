@@ -24,24 +24,7 @@
     </ion-select>
   </ion-item>
 
-  <ion-item class="task" lines="none" *ngFor="let task of tasks">
-    <ion-grid>
-      <ion-row>
-        <ion-col><ion-label>{{task.title}}</ion-label></ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col><ion-label style="font-size: small;">{{task.date}}</ion-label></ion-col>
-      </ion-row>
-    </ion-grid>
-
-    <ion-buttons>
-      <ion-button color="primaryVariant">
-        <ion-icon slot="icon-only" name="create"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-
-    <ion-checkbox slot="start"></ion-checkbox> 
-  </ion-item>
+  <app-task *ngFor="let task of tasks" [title]="task.title" [state]="task.state" [category]="task.category" [date]="task.date" ></app-task>
 
   <ion-item class="task" lines="none">
     <ion-grid>
@@ -80,7 +63,7 @@
 
     <ion-checkbox slot="start"></ion-checkbox> 
   </ion-item>
-
+  
   <ion-item class="task" lines="none">
     <ion-grid>
       <ion-row>
@@ -99,7 +82,7 @@
 
     <ion-checkbox slot="start"></ion-checkbox>
   </ion-item>
-
+  
   <ion-item class="task" lines="none">
     <ion-grid>
       <ion-row>
@@ -117,8 +100,8 @@
     </ion-buttons>
 
     <ion-checkbox slot="start"></ion-checkbox>
-  </ion-item>
-
+  </ion-item> 
+    
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
     <ion-fab-button color="secondary2" routerLink="/tabs/tab1/new-task">
       <ion-icon name="add"></ion-icon>

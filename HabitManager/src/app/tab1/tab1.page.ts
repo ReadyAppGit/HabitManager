@@ -19,6 +19,9 @@ export class Tab1Page {
   }
 
   listTasksFromDB() {
+    // this.tasks=[{title:"meh",state:"unfinished",category:"work",date:new Date()},
+    // {title:"meh2",state:"unfinished",category:"work",date:new Date().setDate(new Date().getDate()-3)}];
+
     this.servicios.getRows().then((res) => {
 
       this.zone.run(() => {

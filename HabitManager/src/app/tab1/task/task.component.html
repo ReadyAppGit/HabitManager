@@ -1,11 +1,22 @@
 <ion-item class="task" lines="none">
+  <ion-item no-padding>
+    <ion-checkbox id="checkbox" [disabled]="state=='finished' ? true:false" [checked]="state=='finished' ? true:false" (click)="completeTask()" slot="start"></ion-checkbox>
+  </ion-item>
   <ion-grid [ngClass]="{'finished':state=='finished','unfinishedLate':state=='unfinished' && daysLeft<0}">
     <ion-row>
-      <ion-col><ion-label>{{title}}</ion-label></ion-col>
+      <ion-col>
+        <ion-label>{{title}}</ion-label>
+      </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col><ion-label style="font-size: small;">{{dateTransformated}}</ion-label></ion-col>
+      <ion-col>
+        <ion-label style="font-size: small;">{{dateTransformated}}</ion-label>
+      </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-checkbox slot="start"></ion-checkbox> 
+  <ion-buttons>
+    <ion-button color="primaryVariant">
+      <ion-icon slot="icon-only" name="create"></ion-icon>
+    </ion-button>
+  </ion-buttons>
 </ion-item>

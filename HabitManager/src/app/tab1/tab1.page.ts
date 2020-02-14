@@ -14,13 +14,11 @@ export class Tab1Page {
 
   }
   ionViewDidEnter() {
-    console.log("ENTRA AL TAB1");
     this.listTasksFromDB();
   }
 
   listTasksFromDB() {
-    // this.tasks=[{title:"meh",state:"unfinished",category:"work",date:new Date()},
-    // {title:"meh2",state:"unfinished",category:"work",date:new Date().setDate(new Date().getDate()-3)}];
+    // this.tasks=[{id:"1",title:"meh",state:"unfinished",category:"work",date:new Date()}];
 
     this.servicios.getRows().then((res) => {
 

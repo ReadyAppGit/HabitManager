@@ -14,6 +14,7 @@
 
 <ion-content color="light">
   <ion-item color="primary2" style="box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
+    <ion-label>Categories</ion-label>
     <ion-select value="all" interface="popover">
       <ion-select-option value="all">All</ion-select-option>
       <ion-select-option value="work">Work</ion-select-option>
@@ -24,9 +25,9 @@
     </ion-select>
   </ion-item>
 
-  <app-task *ngFor="let task of tasks" [title]="task.title" [state]="task.state" [category]="task.category" [date]="task.date" ></app-task>
+  <app-task *ngFor="let task of tasks" [id]="task.id" [title]="task.title" [state]="task.state" [category]="task.category" [date]="task.date" ></app-task>
 
-  <ion-item class="task" lines="none">
+  <!-- <ion-item class="task" lines="none">
     <ion-grid>
       <ion-row>
         <ion-col><ion-label>Task 1</ion-label></ion-col>
@@ -100,7 +101,7 @@
     </ion-buttons>
 
     <ion-checkbox slot="start"></ion-checkbox>
-  </ion-item> 
+  </ion-item>  -->
     
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
     <ion-fab-button color="secondary2" routerLink="/tabs/tab1/new-task">

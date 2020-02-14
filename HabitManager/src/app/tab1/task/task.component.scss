@@ -19,7 +19,8 @@
 }
 
 .finished>ion-row:first-child{
-      text-decoration: line-through;
+  text-decoration: line-through;
+  color: rgb(139, 139, 139);
 }
 .unfinishedLate{
   color: darkred;

@@ -1,13 +1,19 @@
 <ion-header no-border>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="primary2">
     <ion-title>
-      My To-Do List
+      <strong>My To-Do List</strong>
     </ion-title>
+    
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="light">
-  <ion-item color="primary">
+  <ion-item color="primary2" style="box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
     <ion-select value="all" interface="popover">
       <ion-select-option value="all">All</ion-select-option>
       <ion-select-option value="work">Work</ion-select-option>
@@ -18,7 +24,7 @@
     </ion-select>
   </ion-item>
 
-  <ion-item class="task" *ngFor="let task of tasks">
+  <ion-item class="task" lines="none" *ngFor="let task of tasks">
     <ion-grid>
       <ion-row>
         <ion-col><ion-label>{{task.title}}</ion-label></ion-col>
@@ -27,6 +33,13 @@
         <ion-col><ion-label style="font-size: small;">{{task.date}}</ion-label></ion-col>
       </ion-row>
     </ion-grid>
+
+    <ion-buttons>
+      <ion-button color="primaryVariant">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
     <ion-checkbox slot="start"></ion-checkbox> 
   </ion-item>
 
@@ -39,6 +52,13 @@
         <ion-col><ion-label style="font-size: small;">Today</ion-label></ion-col>
       </ion-row>
     </ion-grid>
+
+    <ion-buttons>
+      <ion-button color="primaryVariant">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
     <ion-checkbox slot="start"></ion-checkbox> 
   </ion-item>
 
@@ -51,6 +71,13 @@
         <ion-col><ion-label style="font-size: small;">2 days left</ion-label></ion-col>
       </ion-row>
     </ion-grid>
+
+    <ion-buttons>
+      <ion-button color="primaryVariant">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
     <ion-checkbox slot="start"></ion-checkbox> 
   </ion-item>
 
@@ -63,6 +90,13 @@
         <ion-col><ion-label style="font-size: small;">Finished on Fri, 15 Feb</ion-label></ion-col>
       </ion-row>
     </ion-grid>
+
+    <ion-buttons>
+      <ion-button color="primaryVariant">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
     <ion-checkbox slot="start"></ion-checkbox>
   </ion-item>
 
@@ -75,6 +109,13 @@
         <ion-col><ion-label style="font-size: small; color: darkred;">3 days late</ion-label></ion-col>
       </ion-row>
     </ion-grid>
+
+    <ion-buttons>
+      <ion-button color="primaryVariant">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
     <ion-checkbox slot="start"></ion-checkbox>
   </ion-item>
 

@@ -1,8 +1,14 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="primary2">
     <ion-title>
-      My Habits
+      <strong>My Habits</strong>
     </ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -13,7 +19,12 @@
       <ion-item>
         <ion-icon name="book" slot="start"></ion-icon>
         <ion-card-title text-center>Read A Book</ion-card-title>
-        <ion-button color="primaryVariant" fill="outline" slot="end">edit</ion-button>
+        <!-- <ion-button color="primaryVariant" fill="outline" slot="end">edit</ion-button> -->
+        <ion-buttons slot="end">
+          <ion-button color="primaryVariant">
+            <ion-icon name="create" style="font-size: x-large;"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </ion-item>
       
       <div class="square-container">
@@ -87,7 +98,12 @@
       <ion-item>
         <ion-icon name="walk" slot="start"></ion-icon>
         <ion-card-title text-center>Walk 1 Km</ion-card-title>
-        <ion-button color="primaryVariant" fill="outline" slot="end">edit</ion-button>
+        
+        <ion-buttons slot="end">
+          <ion-button color="primaryVariant">
+            <ion-icon name="create" style="font-size: x-large;"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </ion-item>
 
       <div class="square-container">
@@ -139,7 +155,12 @@
       <ion-item>
         <ion-icon name="beer" slot="start"></ion-icon>
         <ion-card-title text-center>No Alcohol</ion-card-title>
-        <ion-button color="primaryVariant" fill="outline" slot="end">edit</ion-button>
+        
+        <ion-buttons slot="end">
+          <ion-button color="primaryVariant">
+            <ion-icon name="create" style="font-size: x-large;"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </ion-item>
 
       <div class="square-container">

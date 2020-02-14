@@ -1,46 +1,79 @@
 <ion-header no-border>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="primary2">
     <ion-title>
-      My Routine
+      <strong>My Routine</strong>
     </ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="light">
   <ion-slides>
     <ion-slide>
-      <ion-toolbar color="primary">
+      <ion-toolbar color="primary2" style="margin-bottom:30px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
         <ion-title size="small">MONDAY</ion-title>
         <ion-icon style="font-size: xx-large;" name="arrow-dropright" slot="end"></ion-icon>
       </ion-toolbar>
 
-      <ion-list style="padding: 0px;">
-        <ion-item>
+      <!-- <ion-list style="padding: 10px;"> -->
+        <ion-item lines="none" style="margin: 0 10px 0 10px;--background:#dfe0e1; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
           <ion-label style="font-size: small;"> 
-            <!-- colocar repetidos en css -->
-            00:00 - 01:00
+            <!-- colocar estilos repetidos en hoja css -->
+            06:00
             <ion-label style="font-size: medium;"><hr>Take a hot shower :v</ion-label>
           </ion-label>
+
+          <ion-buttons slot="end">
+            <ion-button color="secondary2">
+              <ion-icon name="create" style="font-size: x-large;"></ion-icon>
+            </ion-button>
+          </ion-buttons>
         </ion-item>
-        <ion-item>
+
+        <ion-item lines="none" style="margin: 0 10px 0 10px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);"> 
           <ion-label style="font-size: small;">
-            02:00 - 03:00
+            08:00
             <ion-label style="font-size: medium;"><hr>Nothing</ion-label>
           </ion-label>
+
+          <ion-buttons slot="end">
+            <ion-button color="secondary2">
+              <ion-icon name="create" style="font-size: x-large;"></ion-icon>
+            </ion-button>
+          </ion-buttons>
         </ion-item>
-        <ion-item>
+
+        <ion-item lines="none" style="margin: 0 10px 0 10px; --background:#dfe0e1; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
           <ion-label style="font-size: small;">
-            04:00 - 05:00
+            09:00
             <ion-label style="font-size: medium;"><hr>College</ion-label>
           </ion-label>
+
+          <ion-buttons slot="end">
+            <ion-button color="secondary2">
+              <ion-icon name="create" style="font-size: x-large;"></ion-icon>
+            </ion-button>
+          </ion-buttons>
         </ion-item>
-        <ion-item>
+
+        <ion-item lines="none" style="margin: 0 10px 0 10px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
           <ion-label style="font-size: small;">
-            05:00 - 06:00
+            14:00
             <ion-label style="font-size: medium;"><hr>Tropel??</ion-label>
           </ion-label>
+
+          <ion-buttons slot="end">
+            <ion-button color="secondary2">
+              <ion-icon name="create" style="font-size: x-large;"></ion-icon>
+            </ion-button>
+          </ion-buttons>
         </ion-item>
-      </ion-list>
+      <!-- </ion-list> -->
     </ion-slide>
 
     <ion-slide>
@@ -90,4 +123,10 @@
       </ion-toolbar>
     </ion-slide>
   </ion-slides>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="secondary2">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

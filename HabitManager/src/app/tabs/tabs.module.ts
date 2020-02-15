@@ -9,6 +9,7 @@ import { TabsPage } from './tabs.page';
 import { Tab1Page } from '../tab1/tab1.page';
 import { NewTaskPage } from '../tab1/new-task/new-task.page';
 import { taskPageModule } from '../tab1/task/task.module';
+import { SuperTabsModule } from '@ionic-super-tabs/angular';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { taskPageModule } from '../tab1/task/task.module';
     CommonModule,
     FormsModule,
     TabsPageRoutingModule,
-    taskPageModule
+    taskPageModule,
+    SuperTabsModule
   ],
   declarations: [TabsPage,Tab1Page,NewTaskPage]
 })

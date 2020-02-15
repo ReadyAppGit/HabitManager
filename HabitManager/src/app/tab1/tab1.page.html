@@ -6,6 +6,12 @@
     
     <ion-buttons slot="primary">
       <ion-button>
+        <ion-icon  name="create"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon  name="help"></ion-icon>
+      </ion-button>
+      <ion-button>
         <ion-icon slot="icon-only" name="menu"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -13,17 +19,19 @@
 </ion-header>
 
 <ion-content color="light">
-  <ion-item color="primary2" style="box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
-    <ion-label>Categories</ion-label>
-    <ion-select value="all" interface="popover">
-      <ion-select-option value="all">All</ion-select-option>
-      <ion-select-option value="work">Work</ion-select-option>
-      <ion-select-option value="college">College</ion-select-option>
-      <ion-select-option value="home">Home</ion-select-option>
-      <ion-select-option value="groceries">Groceries</ion-select-option>
-      <ion-select-option value="new-list">New List</ion-select-option>
-    </ion-select>
-  </ion-item>
+  <ion-toolbar color="primary2" style="box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
+    <ion-title size="small">
+      <strong>Categories</strong>
+    </ion-title>
+      <ion-select value="all" interface="popover" slot="end" style="--padding-end:10px;">
+        <ion-select-option value="all">All</ion-select-option>
+        <ion-select-option value="work">Work</ion-select-option>
+        <ion-select-option value="college">College</ion-select-option>
+        <ion-select-option value="home">Home</ion-select-option>
+        <ion-select-option value="groceries">Groceries</ion-select-option>
+        <ion-select-option value="new-list">New List</ion-select-option>
+      </ion-select>
+  </ion-toolbar>
 
   <app-task *ngFor="let task of tasks" [id]="task.id" [title]="task.title" [state]="task.state" [category]="task.category" [date]="task.date" ></app-task>
 

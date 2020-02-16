@@ -5,7 +5,7 @@
     </ion-title>
     
     <ion-buttons slot="primary">
-      <ion-button>
+      <ion-button (click)="changeEditOption()">
         <ion-icon  name="create"></ion-icon>
       </ion-button>
       <ion-button>
@@ -112,7 +112,7 @@
   </ion-item>  -->
     
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-    <ion-fab-button color="secondary2" routerLink="/tabs/tab1/new-task">
+    <ion-fab-button color="secondary2" (click)="redirectToNewTask()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>      

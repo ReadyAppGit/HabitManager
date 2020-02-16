@@ -2,6 +2,8 @@ import { Component, OnInit, Input, NgZone } from '@angular/core';
 import { DatabaseService } from '../../database.service';
 import { AlertController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { MenuService } from '../../menu.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-task',
@@ -17,14 +19,25 @@ export class TaskComponent implements OnInit {
   @Input() public date: any;
 
   private daysLeft = 0;
+  private editValue;
   private dateTransformated;
-  private var = false;
-  constructor(public navCtrl: NavController, public router: Router, public servicio: DatabaseService, public zone: NgZone, private alertCtrl: AlertController) { }
+
+  private editTaskReference: Subscription = null;
+
+  constructor(public menu:MenuService,public navCtrl: NavController, public router: Router, public servicio: DatabaseService, public zone: NgZone, private alertCtrl: AlertController) { }
 
   ngOnInit() {
     this.transformTheDate();
+    this.subscribeToEditTaskValue();
   }
 
+  subscribeToEditTaskValue(){
+    this.editTaskReference = this.menu.EditTask$.subscribe((value)=>{
+      this.zone.run(() => {
+        this.editValue=value;
+      });
+    });
+  }
   transformTheDate() {
     this.date = new Date(this.date);
     if (this.state == "finished") {
@@ -81,5 +94,9 @@ export class TaskComponent implements OnInit {
   }
 
 
+  ngOnDestroy(){
+    console.log("entra al on destroy")
+    this.editTaskReference.unsubscribe();
+  }
 
 }

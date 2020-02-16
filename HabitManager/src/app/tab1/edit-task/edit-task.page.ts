@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, NgZone } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { DatabaseService } from '../../database.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-edit-task',
@@ -14,7 +15,7 @@ export class EditTaskPage {
   @Input() public state: string;
   @Input() public category: string;
   @Input() public date: any;
-  constructor(private router:Router,private route: ActivatedRoute, public zone: NgZone,public servicio:DatabaseService) { }
+  constructor(private alertCtrl: AlertController, private router: Router, private route: ActivatedRoute, public zone: NgZone, public servicio: DatabaseService) { }
 
   ionViewDidEnter() {
     this.route.paramMap.subscribe(params => {
@@ -28,8 +29,8 @@ export class EditTaskPage {
     }
     )
   }
-  editTask(){
-    this.servicio.editRow(this.id,this.title, this.state, this.category, this.date)
+  editTask() {
+    this.servicio.editTask(this.id, this.title, this.state, this.category, this.date)
       .then(() => {
         alert('Row edited!');
         this.router.navigate(['/tabs/tab1']);
@@ -39,4 +40,42 @@ export class EditTaskPage {
       });
   }
 
+  
+
+
+
+
+
+  async deleteTask() {
+    const alert = await this.alertCtrl.create({
+      header: 'Confirm!',
+      message: '<strong>Are you sure about delete this task?</strong>',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+
+          }
+        }, {
+          text: 'Okay',
+          handler: () => {
+            this.servicio.deleteTask(this.id)
+              .then(() => {
+                console.log('Row deleted!');
+                this.router.navigate(['/tabs/tab1']);
+              })
+              .catch(e => {
+                console.log("error " + JSON.stringify(e))
+              });
+
+
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
 }

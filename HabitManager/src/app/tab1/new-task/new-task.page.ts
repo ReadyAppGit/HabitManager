@@ -23,7 +23,7 @@ export class NewTaskPage {
 
   createTask() {
     console.log([this.title, this.state, this.category, this.date]);
-    this.servicio.insertRow(this.title, this.state, this.category, this.date)
+    this.servicio.insertTask(this.title, this.state, this.category, this.date)
       .then(() => {
         alert('Row Inserted!');
         this.router.navigate(['/tabs/tab1']);

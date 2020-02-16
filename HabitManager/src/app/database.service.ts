@@ -25,7 +25,7 @@ export class DatabaseService {
     })
       .then((db: SQLiteObject) => {
         this.databaseObj = db;
-        this.createOrReadTable();
+        this.createOrReadTaskTable();
       })
       .catch(e => {
         alert("error " + JSON.stringify(e))
@@ -33,7 +33,7 @@ export class DatabaseService {
   }
 
 
-  createOrReadTable() {
+  createOrReadTaskTable() {
     this.databaseObj.executeSql('CREATE TABLE IF NOT EXISTS task (id INTEGER PRIMARY KEY, title varchar(50),state varchar(20),category varchar(20), date varchar(50) )', [])
       .then(() => {
       })
@@ -44,21 +44,27 @@ export class DatabaseService {
 
 
 
-  insertRow(title,state,category,date) {
+  insertTask(title,state,category,date) {
     return this.databaseObj.executeSql('INSERT INTO task (title,state,category,date) VALUES ("' + title + '","'+state+'","'+category+'","' + date + '")', []);
   }
 
 
-  getRows() {
+  getTasks() {
     return this.databaseObj.executeSql("SELECT * FROM task", []);
   }
 
   completeTask(taskID){
     return this.databaseObj.executeSql("UPDATE task SET state='finished' WHERE task.id='"+taskID+"'", []);
   }
-  editRow(taskID,title,state,category,date){
+  editTask(taskID,title,state,category,date){
     return this.databaseObj.executeSql("UPDATE task SET title='"+title+"',state='"+state+"',category='"+category+"',date='"+date+"'  WHERE task.id='"+taskID+"'", []);
   }
+  deleteTask(taskID){
+    return this.databaseObj.executeSql("DELETE FROM task WHERE task.id='"+taskID+"'", []);
+  }
+
+
+
 
 
 

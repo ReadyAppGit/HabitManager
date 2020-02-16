@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, NgZone } from '@angular/core';
 import { DatabaseService } from '../../database.service';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task',
@@ -17,8 +18,8 @@ export class TaskComponent implements OnInit {
 
   private daysLeft = 0;
   private dateTransformated;
-  private var=false;
-  constructor(public servicio: DatabaseService, public zone: NgZone,private alertCtrl: AlertController) { }
+  private var = false;
+  constructor(public navCtrl: NavController, public router: Router, public servicio: DatabaseService, public zone: NgZone, private alertCtrl: AlertController) { }
 
   ngOnInit() {
     this.transformTheDate();
@@ -40,12 +41,9 @@ export class TaskComponent implements OnInit {
     }
   }
   completeTask() {
-    if(this.state!="finished"){
+    if (this.state != "finished") {
       this.presentAlertConfirm();
     }
-  }
-  editTask(){
-
   }
 
   async presentAlertConfirm() {
@@ -58,8 +56,8 @@ export class TaskComponent implements OnInit {
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
-            var element =<HTMLInputElement>document.getElementById("checkbox");
-            element.checked=false;
+            var element = <HTMLInputElement>document.getElementById("checkbox");
+            element.checked = false;
           }
         }, {
           text: 'Okay',
@@ -71,9 +69,9 @@ export class TaskComponent implements OnInit {
                 this.transformTheDate();
               });
             })
-            .catch(e => {
-              console.log("error " + JSON.stringify(e))
-            });
+              .catch(e => {
+                console.log("error " + JSON.stringify(e))
+              });
           }
         }
       ]
@@ -83,5 +81,5 @@ export class TaskComponent implements OnInit {
   }
 
 
-  
+
 }

@@ -4,11 +4,15 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import {TaskComponent} from './task.component';
+
+import {TabsPageRoutingModule} from '../../tabs/tabs-routing.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule
+    IonicModule,
+    TabsPageRoutingModule
   ],
   exports:[TaskComponent],
   declarations: [TaskComponent]

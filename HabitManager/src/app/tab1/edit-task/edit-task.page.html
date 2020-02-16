@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar color="primary2">
+        <ion-buttons slot="start">
+            <ion-button routerLink="/tabs/tab1">
+                <ion-icon slot="icon-only" name="arrow-round-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title text-center>Edit Task</ion-title>
+
+        <ion-buttons slot="end">
+            <ion-button (click)="editTask()">
+                <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <hr>
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+        <ion-item>
+            <ion-label position="floating">Your Task Name</ion-label>
+            <ion-input [(ngModel)]="title"></ion-input>
+        </ion-item>
+        <hr>
+        <ion-item>
+            <ion-label>Deadline</ion-label>
+            <ion-datetime [(ngModel)]="date"></ion-datetime>
+        </ion-item>
+        <hr>
+        <ion-item>
+            <ion-label>Category</ion-label>
+            <ion-select [(ngModel)]="category" value="work" interface="popover">
+                <ion-select-option value="work">Work</ion-select-option>
+                <ion-select-option value="college">College</ion-select-option>
+                <ion-select-option value="home">Home</ion-select-option>
+                <ion-select-option value="groceries">Groceries</ion-select-option>
+                <ion-select-option value="new-list">New List</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+</ion-content>

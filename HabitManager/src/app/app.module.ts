@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 //SQLITE PARA ALMACENAR LOS DATOS
 import { SQLite } from '@ionic-native/sqlite/ngx';
 
-import { SuperTabsModule } from '@ionic-super-tabs/angular'
+// import { SuperTabsModule } from '@ionic-super-tabs/angular'
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +22,7 @@ import { SuperTabsModule } from '@ionic-super-tabs/angular'
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    SuperTabsModule.forRoot(),
+    // SuperTabsModule.forRoot(),
   ],
   providers: [
     StatusBar,
@@ -33,10 +33,10 @@ import { SuperTabsModule } from '@ionic-super-tabs/angular'
   bootstrap: [AppComponent]
 })
 
-@NgModule({
-  imports: [
-    SuperTabsModule,
-  ],
-})
+// @NgModule({
+//   imports: [
+//     SuperTabsModule,
+//   ],
+// })
 
 export class AppModule {}

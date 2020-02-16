@@ -1,5 +1,5 @@
 <ion-item class="task" lines="none">
-  <ion-item no-padding>
+  <ion-item class="ion-no-padding">
     <ion-checkbox id="checkbox" [disabled]="state=='finished' ? true:false" [checked]="state=='finished' ? true:false" (click)="completeTask()" slot="start"></ion-checkbox>
   </ion-item>
   <ion-grid [ngClass]="{'finished':state=='finished','unfinishedLate':state=='unfinished' && daysLeft<0}">
@@ -15,7 +15,7 @@
     </ion-row>
   </ion-grid>
   <ion-buttons>
-    <ion-button color="primaryVariant">
+    <ion-button color="primaryVariant" [routerLink]="['edit-task',[id,title,state,category,date]]">
       <ion-icon slot="icon-only" name="create"></ion-icon>
     </ion-button>
   </ion-buttons>

@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { Tab1Page } from '../tab1/tab1.page';
 import { NewTaskPage } from '../tab1/new-task/new-task.page';
+import { EditTaskPage } from '../tab1/edit-task/edit-task.page';
+
 
 const routes: Routes = [
   {
@@ -19,6 +21,10 @@ const routes: Routes = [
           {
             path: 'new-task',
             component: NewTaskPage
+          },
+          {
+            path: 'edit-task',
+            component: EditTaskPage
           }
         ]
       },

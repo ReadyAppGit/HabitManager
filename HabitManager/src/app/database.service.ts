@@ -56,9 +56,9 @@ export class DatabaseService {
   completeTask(taskID){
     return this.databaseObj.executeSql("UPDATE task SET state='finished' WHERE task.id='"+taskID+"'", []);
   }
-  // editTask(taskID,title,state,category,date){
-  //   return this.databaseObj.executeSql("UPDATE task SET state='finished' WHERE task.id='"+taskID+"'", []);
-  // }
+  editRow(taskID,title,state,category,date){
+    return this.databaseObj.executeSql("UPDATE task SET title='"+title+"',state='"+state+"',category='"+category+"',date='"+date+"'  WHERE task.id='"+taskID+"'", []);
+  }
 
 
 

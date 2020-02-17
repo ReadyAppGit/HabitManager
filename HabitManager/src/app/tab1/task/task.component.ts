@@ -22,11 +22,15 @@ export class TaskComponent implements OnInit {
   private editValue;
   private dateTransformated;
 
+  private check;
   private editTaskReference: Subscription = null;
 
   constructor(public menu:MenuService,public navCtrl: NavController, public router: Router, public servicio: DatabaseService, public zone: NgZone, private alertCtrl: AlertController) { }
 
   ngOnInit() {
+    if(this.state=="finished"){
+      this.check=true;
+    }
     this.transformTheDate();
     this.subscribeToEditTaskValue();
   }
@@ -69,8 +73,7 @@ export class TaskComponent implements OnInit {
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
-            var element = <HTMLInputElement>document.getElementById("checkbox");
-            element.checked = false;
+            this.check=false;
           }
         }, {
           text: 'Okay',

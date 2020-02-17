@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular';
 import { DatabaseService } from '../../database.service';
 import { Router } from '@angular/router';
 
@@ -14,11 +14,8 @@ export class NewTaskPage {
   private state = "unfinished";
   private category;
   private date;
-  constructor(public modalController: ModalController, public servicio: DatabaseService, public router: Router) {
+  constructor(public navCtrl:NavController,public modalController: ModalController, public servicio: DatabaseService, public router: Router) {
 
-  }
-  ionViewDidEnter() {
-    console.log("ENTRA A NEW TASK")
   }
 
   createTask() {
@@ -31,7 +28,11 @@ export class NewTaskPage {
       .catch(e => {
         alert("error " + JSON.stringify(e))
       });
-
   }
+
+  redirectToTab1(){ //forma alternativa en la que si se llama el ngondestroy bien
+    this.navCtrl.navigateRoot("/tabs/tab1");
+  }
+
 
 }

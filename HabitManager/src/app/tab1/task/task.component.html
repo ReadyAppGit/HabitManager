@@ -1,6 +1,6 @@
 <ion-item class="task" lines="none">
   <ion-item class="ion-no-padding">
-    <ion-checkbox id="checkbox" [disabled]="state=='finished' ? true:false" [checked]="state=='finished' ? true:false" (click)="completeTask()" slot="start"></ion-checkbox>
+    <ion-checkbox [(ngModel)]="check" [disabled]="state=='finished' ? true:false" (click)="completeTask()" slot="start"></ion-checkbox>
   </ion-item>
   <ion-grid [ngClass]="{'finished':state=='finished','unfinishedLate':state=='unfinished' && daysLeft<0}">
     <ion-row>

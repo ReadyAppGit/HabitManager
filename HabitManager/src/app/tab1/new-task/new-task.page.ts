@@ -23,7 +23,7 @@ export class NewTaskPage {
     this.servicio.insertTask(this.title, this.state, this.category, this.date)
       .then(() => {
         alert('Row Inserted!');
-        this.router.navigate(['/tabs/tab1']);
+        this.navCtrl.navigateRoot("/tabs/tab1");
       })
       .catch(e => {
         alert("error " + JSON.stringify(e))

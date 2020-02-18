@@ -1,0 +1,23 @@
+  <hr>
+  <ion-card style="margin:0 20px 0 20px;">
+    <ion-card-content>
+      <ion-item>
+        <ion-icon name="book" slot="start"></ion-icon>
+        <ion-card-title text-center>{{title}}</ion-card-title>
+        <!-- <ion-button color="primaryVariant" fill="outline" slot="end">edit</ion-button> -->
+        <ion-buttons slot="end">
+          <ion-button color="primaryVariant">
+            <ion-icon name="create" style="font-size: x-large;"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+      
+      <div class="square-container">
+        <div class="square" *ngFor="let day of [].constructor(totalDays);let i=index;" (click)="addADayInAHabit(i)">
+          <div [ngClass]="{'finished':i+1<=daysSoFar}" class="content"></div>
+        </div>
+      </div>
+
+      <ion-label>{{daysSoFar}}/{{totalDays}}</ion-label>
+    </ion-card-content>
+  </ion-card>

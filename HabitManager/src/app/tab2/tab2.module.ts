@@ -9,8 +9,7 @@ import { Tab2Page } from './tab2.page';
   imports: [
     IonicModule,
     CommonModule,
-    FormsModule,
-    RouterModule.forChild([{ path: '', component: Tab2Page }])
+    FormsModule
   ],
   declarations: [Tab2Page]
 })

@@ -16,16 +16,19 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
+</ion-header> 
 
 <ion-content color="light">
-  <hr>
-  <ion-card style="margin:0 20px 0 20px;">
+
+  <app-habit *ngFor="let habit of habits" [id]="habit.id" [title]="habit.title" [totalDays]="habit.totalDays" [daysSoFar]="habit.daysSoFar" [dateLastDayAdded]="habit.dateLastDayAdded" ></app-habit>
+
+
+
+  <!-- <ion-card style="margin:0 20px 0 20px;">
     <ion-card-content>
       <ion-item>
         <ion-icon name="book" slot="start"></ion-icon>
         <ion-card-title text-center>Read A Book</ion-card-title>
-        <!-- <ion-button color="primaryVariant" fill="outline" slot="end">edit</ion-button> -->
         <ion-buttons slot="end">
           <ion-button color="primaryVariant">
             <ion-icon name="create" style="font-size: x-large;"></ion-icon>
@@ -98,6 +101,10 @@
       <ion-label>0/15</ion-label>
     </ion-card-content>
   </ion-card>
+
+
+
+
   <hr>
   <ion-card style="margin:0 20px 0 20px;">
     <ion-card-content>
@@ -155,8 +162,11 @@
       </div>
     </ion-card-content>
   </ion-card>
-  <hr>
-  <ion-card style="margin:0 20px 0 20px;">
+  <hr> -->
+
+
+
+  <!-- <ion-card style="margin:0 20px 0 20px;">
     <ion-card-content>
       <ion-item>
         <ion-icon name="beer" slot="start"></ion-icon>
@@ -188,9 +198,13 @@
       </div>
     </ion-card-content>
   </ion-card>
-  <hr>
+  <hr> -->
+
+
+
+  
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-    <ion-fab-button color="secondary2">
+    <ion-fab-button color="secondary2" (click)="redirectToNewHabit()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

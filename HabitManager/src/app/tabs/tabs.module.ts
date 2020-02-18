@@ -12,6 +12,7 @@ import { taskPageModule } from '../tab1/task/task.module';
 import { SuperTabsModule } from '@ionic-super-tabs/angular';
 import { EditTaskPageModule } from '../tab1/edit-task/edit-task.module';
 import { EditTaskPage } from '../tab1/edit-task/edit-task.page';
+import { NewRoutinePage } from '../tab3/new-routine/new-routine.page';
 
 @NgModule({
   imports: [
@@ -22,6 +23,6 @@ import { EditTaskPage } from '../tab1/edit-task/edit-task.page';
     taskPageModule,
     // SuperTabsModule
   ],
-  declarations: [TabsPage,Tab1Page,NewTaskPage,EditTaskPage]
+  declarations: [TabsPage,Tab1Page,NewTaskPage,EditTaskPage,NewRoutinePage]
 })
 export class TabsPageModule {}

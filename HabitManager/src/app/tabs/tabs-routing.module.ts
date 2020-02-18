@@ -4,7 +4,7 @@ import { TabsPage } from './tabs.page';
 import { Tab1Page } from '../tab1/tab1.page';
 import { NewTaskPage } from '../tab1/new-task/new-task.page';
 import { EditTaskPage } from '../tab1/edit-task/edit-task.page';
-
+import {NewRoutinePage} from '../tab3/new-routine/new-routine.page';
 
 const routes: Routes = [
   {
@@ -41,6 +41,10 @@ const routes: Routes = [
       {
         path: 'tab3',
         children: [
+          {
+            path: 'new-routine',
+            component: NewRoutinePage
+          },
           {
             path: '',
             loadChildren: () =>

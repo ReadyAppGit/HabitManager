@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary2">
+    <ion-buttons slot="start">
+      <ion-button (click)="redirectToTab3()"> 
+        <ion-icon slot="icon-only" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">New Routine</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <hr>
+  <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    <ion-item>
+      <ion-label position="floating">Routine</ion-label>
+      <ion-input [(ngModel)]="text"></ion-input>
+    </ion-item>
+    <hr>
+    <ion-item>
+      <ion-label>Hour</ion-label>
+      <ion-datetime [(ngModel)]="hour" display-format="h:mm A" picker-format="h:mm A"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Day</ion-label>
+      <ion-select [(ngModel)]="day" value="M" interface="popover">
+        <ion-select-option value="M">Monday</ion-select-option>
+        <ion-select-option value="TU">Tuesday</ion-select-option>
+        <ion-select-option value="W">Wednesday</ion-select-option>
+        <ion-select-option value="TH">Thursday</ion-select-option>
+        <ion-select-option value="F">Friday</ion-select-option>
+        <ion-select-option value="SA">Saturday</ion-select-option>
+        <ion-select-option value="SU">Sunday</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>

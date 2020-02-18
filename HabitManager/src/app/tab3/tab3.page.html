@@ -3,16 +3,15 @@
     <ion-title>
       <strong>My Routine</strong>
     </ion-title>
-
     <ion-buttons slot="primary">
-      <ion-button>
-        <ion-icon  name="create"></ion-icon>
+      <ion-button (click)="changeEditOption()">
+        <ion-icon name="create"></ion-icon>
       </ion-button>
       <ion-button>
-        <ion-icon  name="help"></ion-icon>
+        <ion-icon name="help"></ion-icon>
       </ion-button>
       <ion-button>
-        <ion-icon slot="icon-only" name="menu"></ion-icon>
+        <ion-icon name="more"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -21,133 +20,132 @@
 <ion-content color="light">
   <ion-slides>
     <ion-slide>
-      <ion-toolbar color="primary2" style="margin-bottom:20px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
-        <ion-title size="small">
-          MONDAY
-        </ion-title>
+      <ion-toolbar class="day" color="primary2">
+        <ion-title size="small">MONDAY</ion-title>
         <ion-icon style="font-size: xx-large;" name="arrow-dropright" slot="end"></ion-icon>
       </ion-toolbar>
-
-      <!-- <ion-list style="padding: 10px;"> -->
-        <ion-item lines="none" style="margin: 0 20px 0 20px;--background:#faef93; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
-          <ion-label style="font-size: small;"> 
-            <!-- colocar estilos repetidos en hoja css -->
-            06:00 AM
-            <ion-label style="font-size: medium;"><hr>Take a hot shower :v</ion-label>
+      <ion-item *ngFor="let routineM of routinesM; let i=index" [ngClass]="{'yellow':i%2==0}" lines="none" class="routineItem">
+        <ion-label style="font-size: small;">{{routineM.hour}}
+          <ion-label style="font-size: medium;">
+            <hr>{{routineM.text}}
           </ion-label>
-
-          <ion-button color="dark">
-            <ion-icon name="create" style="font-size: large;"></ion-icon>
-          </ion-button>
-        </ion-item>
-
-        <ion-item lines="none" style="margin: 0 20px 0 20px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);"> 
-          <ion-label style="font-size: small;">
-            08:00 AM
-            <ion-label style="font-size: medium;"><hr>Nothing</ion-label>
-          </ion-label>
-
-          <ion-button color="dark">
-            <ion-icon name="create" style="font-size: large;"></ion-icon>
-          </ion-button>
-        </ion-item>
-
-        <ion-item lines="none" style="margin: 0 20px 0 20px; --background:#faef93; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
-          <ion-label style="font-size: small;">
-            09:00 AM
-            <ion-label style="font-size: medium;"><hr>College</ion-label>
-          </ion-label>
-
-          <ion-button color="dark">
-            <ion-icon name="create" style="font-size: large;"></ion-icon>
-          </ion-button>
-        </ion-item>
-
-        <ion-item lines="none" style="margin: 0 20px 0 20px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
-          <ion-label style="font-size: small;">
-            02:00 PM
-            <ion-label style="font-size: medium;"><hr>Tropel??</ion-label>
-          </ion-label>
-
-          <ion-button color="dark">
-            <ion-icon name="create" style="font-size: large;"></ion-icon>
-          </ion-button>
-        </ion-item>
-
-        <ion-item lines="none" style="margin: 0 20px 0 20px; --background:#faef93; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
-          <ion-label style="font-size: small;">
-            05:00 PM
-            <ion-label style="font-size: medium;"><hr>Tropel??</ion-label>
-          </ion-label>
-
-          <ion-button color="dark">
-            <ion-icon name="create" style="font-size: large;"></ion-icon>
-          </ion-button>
-        </ion-item>
-
-        <ion-item lines="none" style="margin: 0 20px 0 20px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
-          <ion-label style="font-size: small;">
-            08:00 PM
-            <ion-label style="font-size: medium;"><hr>Tropel??</ion-label>
-          </ion-label>
-
-          <ion-button color="dark">
-            <ion-icon name="create" style="font-size: large;"></ion-icon>
-          </ion-button>
-        </ion-item>
-      <!-- </ion-list> -->
+        </ion-label>
+        <ion-button *ngIf="editValue" color="dark">
+          <ion-icon name="create" style="font-size: large;"></ion-icon>
+        </ion-button>
+      </ion-item>
     </ion-slide>
 
     <ion-slide>
-      <ion-toolbar color="primary2" style="margin-bottom:20px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
+      <ion-toolbar class="day" color="primary2">
         <ion-icon style="font-size: xx-large;" name="arrow-dropleft" slot="start"></ion-icon>
         <ion-title size="small">TUESDAY</ion-title>
         <ion-icon style="font-size: xx-large;" name="arrow-dropright" slot="end"></ion-icon>
       </ion-toolbar>
+      <ion-item *ngFor="let routineTU of routinesTU; let i=index" [ngClass]="{'yellow':i%2==0}" lines="none" class="routineItem">
+        <ion-label style="font-size: small;">{{routineTU.hour}}
+          <ion-label style="font-size: medium;">
+            <hr>{{routineTU.text}}
+          </ion-label>
+        </ion-label>
+        <ion-button *ngIf="editValue" color="dark">
+          <ion-icon name="create" style="font-size: large;"></ion-icon>
+        </ion-button>
+      </ion-item>
     </ion-slide>
 
     <ion-slide>
-      <ion-toolbar color="primary2" style="margin-bottom:20px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
+      <ion-toolbar class="day" color="primary2">
         <ion-icon style="font-size: xx-large;" name="arrow-dropleft" slot="start"></ion-icon>
         <ion-title size="small">WEDNESDAY</ion-title>
         <ion-icon style="font-size: xx-large;" name="arrow-dropright" slot="end"></ion-icon>
       </ion-toolbar>
+      <ion-item *ngFor="let routineW of routinesW; let i=index" [ngClass]="{'yellow':i%2==0}" lines="none" class="routineItem">
+        <ion-label style="font-size: small;">{{routineW.hour}}
+          <ion-label style="font-size: medium;">
+            <hr>{{routineW.text}}
+          </ion-label>
+        </ion-label>
+        <ion-button *ngIf="editValue" color="dark">
+          <ion-icon name="create" style="font-size: large;"></ion-icon>
+        </ion-button>
+      </ion-item>
     </ion-slide>
 
     <ion-slide>
-      <ion-toolbar color="primary2" style="margin-bottom:20px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
+      <ion-toolbar class="day" color="primary2">
         <ion-icon style="font-size: xx-large;" name="arrow-dropleft" slot="start"></ion-icon>
         <ion-title size="small">THURSDAY</ion-title>
         <ion-icon style="font-size: xx-large;" name="arrow-dropright" slot="end"></ion-icon>
       </ion-toolbar>
+      <ion-item *ngFor="let routineTH of routinesTH; let i=index" [ngClass]="{'yellow':i%2==0}" lines="none" class="routineItem">
+        <ion-label style="font-size: small;">{{routineTH.hour}}
+          <ion-label style="font-size: medium;">
+            <hr>{{routineTH.text}}
+          </ion-label>
+        </ion-label>
+        <ion-button *ngIf="editValue" color="dark">
+          <ion-icon name="create" style="font-size: large;"></ion-icon>
+        </ion-button>
+      </ion-item>
     </ion-slide>
 
     <ion-slide>
-      <ion-toolbar color="primary2" style="margin-bottom:20px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
+      <ion-toolbar class="day" color="primary2">
         <ion-icon style="font-size: xx-large;" name="arrow-dropleft" slot="start"></ion-icon>
         <ion-title size="small">FRIDAY</ion-title>
         <ion-icon style="font-size: xx-large;" name="arrow-dropright" slot="end"></ion-icon>
       </ion-toolbar>
+      <ion-item *ngFor="let routineF of routinesF; let i=index" [ngClass]="{'yellow':i%2==0}" lines="none" class="routineItem">
+        <ion-label style="font-size: small;">{{routineF.hour}}
+          <ion-label style="font-size: medium;">
+            <hr>{{routineF.text}}
+          </ion-label>
+        </ion-label>
+        <ion-button *ngIf="editValue" color="dark">
+          <ion-icon name="create" style="font-size: large;"></ion-icon>
+        </ion-button>
+      </ion-item>
     </ion-slide>
 
     <ion-slide>
-      <ion-toolbar color="primary2" style="margin-bottom:20px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
+      <ion-toolbar class="day" color="primary2">
         <ion-icon style="font-size: xx-large;" name="arrow-dropleft" slot="start"></ion-icon>
         <ion-title size="small">SATURDAY</ion-title>
         <ion-icon style="font-size: xx-large;" name="arrow-dropright" slot="end"></ion-icon>
       </ion-toolbar>
+      <ion-item *ngFor="let routineSA of routinesSA; let i=index" [ngClass]="{'yellow':i%2==0}" lines="none" class="routineItem">
+        <ion-label style="font-size: small;">{{routineSA.hour}}
+          <ion-label style="font-size: medium;">
+            <hr>{{routineSA.text}}
+          </ion-label>
+        </ion-label>
+        <ion-button *ngIf="editValue" color="dark">
+          <ion-icon name="create" style="font-size: large;"></ion-icon>
+        </ion-button>
+      </ion-item>
     </ion-slide>
 
     <ion-slide>
-      <ion-toolbar color="primary2" style="margin-bottom:20px; box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);">
+      <ion-toolbar class="day" color="primary2">
         <ion-icon style="font-size: xx-large;" name="arrow-dropleft" slot="start"></ion-icon>
         <ion-title size="small">SUNDAY</ion-title>
       </ion-toolbar>
+      <ion-item *ngFor="let routineSU of routinesSU; let i=index" [ngClass]="{'yellow':i%2==0}" lines="none" class="routineItem">
+        <ion-label style="font-size: small;">{{routineSU.hour}}
+          <ion-label style="font-size: medium;">
+            <hr>{{routineSU.text}}
+          </ion-label>
+        </ion-label>
+        <ion-button *ngIf="editValue" color="dark">
+          <ion-icon name="create" style="font-size: large;"></ion-icon>
+        </ion-button>
+      </ion-item>
     </ion-slide>
   </ion-slides>
 
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-    <ion-fab-button color="secondary2">
+    <ion-fab-button color="secondary2" (click)="redirectToNewRoutine()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

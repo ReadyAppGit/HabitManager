@@ -64,8 +64,21 @@ export class DatabaseService {
   }
 
 
+  createOrReadRoutineTable() {
+    this.databaseObj.executeSql('CREATE TABLE IF NOT EXISTS routine (id INTEGER PRIMARY KEY, text varchar(50), hour varchar(50), day varchar(2) )', [])
+      .then(() => {
+      })
+      .catch(e => {
+        alert("error " + JSON.stringify(e))
+      }); 
+  }
 
+  insertRoutine(text, hour, day) {
+    return this.databaseObj.executeSql('INSERT INTO routine (text, hour, day) VALUES ("' + text + '","'+hour+'","'+day+'")', []);
+  }
 
-
+  getRoutines() {
+    return this.databaseObj.executeSql("SELECT * FROM routine", []);
+  }
 
 }

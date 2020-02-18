@@ -12,7 +12,12 @@ export class Tab1Page {
 
   private tasks;
   private editValue;
-  constructor(public navCtrl:NavController,public menu:MenuService,public modalController: ModalController, public servicios: DatabaseService,private zone: NgZone) {
+  constructor(
+    public navCtrl:NavController,
+    public menu:MenuService,
+    public modalController: ModalController, 
+    public servicios: DatabaseService,
+    private zone: NgZone,) {
 
   }
   ionViewDidEnter() {

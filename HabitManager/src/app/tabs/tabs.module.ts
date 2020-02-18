@@ -10,9 +10,13 @@ import { Tab1Page } from '../tab1/tab1.page';
 import { NewTaskPage } from '../tab1/new-task/new-task.page';
 import { taskPageModule } from '../tab1/task/task.module';
 import { EditTaskPage } from '../tab1/edit-task/edit-task.page';
+
 import { Tab2Page } from '../tab2/tab2.page';
 import { HabitPageModule } from '../tab2/habit/habit.module';
 import { NewHabitPage } from '../tab2/new-habit/new-habit.page';
+
+import { NewRoutinePage } from '../tab3/new-routine/new-routine.page';
+
 
 @NgModule({
   imports: [
@@ -24,6 +28,6 @@ import { NewHabitPage } from '../tab2/new-habit/new-habit.page';
     HabitPageModule
     // SuperTabsModule
   ],
-  declarations: [TabsPage,Tab1Page,NewTaskPage,EditTaskPage,Tab2Page,NewHabitPage]
+  declarations: [TabsPage,Tab1Page,NewTaskPage,EditTaskPage,Tab2Page,NewHabitPage,NewRoutinePage]
 })
 export class TabsPageModule {}

@@ -27,6 +27,7 @@ export class DatabaseService {
         this.databaseObj = db;
         this.createOrReadTaskTable();
         this.createOrReadHabitTable();
+        this.createOrReadRoutineTable();
       })
       .catch(e => {
         alert("error " + JSON.stringify(e))

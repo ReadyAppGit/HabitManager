@@ -8,6 +8,7 @@ import { MenuService } from '../menu.service';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
+
 export class Tab3Page {
 
   private editValue;
@@ -27,28 +28,14 @@ export class Tab3Page {
     public servicios: DatabaseService,
     private zone: NgZone,) {
 
-    }
+  }
 
   ionViewDidEnter() {
-    // this.editValue=true;
     this.listRoutinesFromDB();
   }
 
   listRoutinesFromDB() {
-    this.routines = [
-      {id:"1", text:"Do homework", hour:"02:00 PM", day:"M"},
-      {id:"2", text:"College", hour:"06:00 PM", day:"M"},
-      {id:"3", text:"martees", hour:"09:00 PM", day:"TU"},
-      {id:"3", text:"martees", hour:"09:00 PM", day:"TU"},
-      {id:"3", text:"martees", hour:"09:00 PM", day:"TU"},
-      {id:"3", text:"mier", hour:"09:00 PM", day:"W"},
-      {id:"3", text:"jueves", hour:"09:00 PM", day:"TH"},
-      {id:"3", text:"jueves", hour:"09:00 PM", day:"TH"},
-      {id:"3", text:"jueves", hour:"09:00 PM", day:"TH"},
-      {id:"3", text:"viernes", hour:"09:00 PM", day:"F"},
-      {id:"3", text:"sabado", hour:"09:00 PM", day:"SA"},
-      {id:"3", text:"domingo", hour:"09:00 PM", day:"SU"},
-    ];
+    this.routines = [];
 
     this.routinesM = this.routines.filter(a=>a.day=="M");
     this.routinesTU = this.routines.filter(a=>a.day=="TU");

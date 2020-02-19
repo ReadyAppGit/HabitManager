@@ -3,7 +3,6 @@
     <ion-title>
       <strong>My Habits</strong>
     </ion-title>
-
     <ion-buttons slot="primary">
       <ion-button>
         <ion-icon  name="create"></ion-icon>
@@ -12,197 +11,15 @@
         <ion-icon  name="help"></ion-icon>
       </ion-button>
       <ion-button>
-        <ion-icon slot="icon-only" name="menu"></ion-icon>
+        <ion-icon style="font-size: x-large;" name="more"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header> 
 
 <ion-content color="light">
-
   <app-habit *ngFor="let habit of habits" [id]="habit.id" [title]="habit.title" [totalDays]="habit.totalDays" [daysSoFar]="habit.daysSoFar" [dateLastDayAdded]="habit.dateLastDayAdded" ></app-habit>
 
-
-
-  <!-- <ion-card style="margin:0 20px 0 20px;">
-    <ion-card-content>
-      <ion-item>
-        <ion-icon name="book" slot="start"></ion-icon>
-        <ion-card-title text-center>Read A Book</ion-card-title>
-        <ion-buttons slot="end">
-          <ion-button color="primaryVariant">
-            <ion-icon name="create" style="font-size: x-large;"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-item>
-      
-      <div class="square-container">
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      </div>
-
-      <ion-label>0/15</ion-label>
-    </ion-card-content>
-  </ion-card>
-
-
-
-
-  <hr>
-  <ion-card style="margin:0 20px 0 20px;">
-    <ion-card-content>
-      <ion-item>
-        <ion-icon name="walk" slot="start"></ion-icon>
-        <ion-card-title text-center>Walk 1 Km</ion-card-title>
-        
-        <ion-buttons slot="end">
-          <ion-button color="primaryVariant">
-            <ion-icon name="create" style="font-size: x-large;"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-item>
-
-      <div class="square-container">
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-  <hr> -->
-
-
-
-  <!-- <ion-card style="margin:0 20px 0 20px;">
-    <ion-card-content>
-      <ion-item>
-        <ion-icon name="beer" slot="start"></ion-icon>
-        <ion-card-title text-center>No Alcohol</ion-card-title>
-        
-        <ion-buttons slot="end">
-          <ion-button color="primaryVariant">
-            <ion-icon name="create" style="font-size: x-large;"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-item>
-
-      <div class="square-container">
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      
-        <div class="square">
-          <div class="content"></div>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-  <hr> -->
-
-
-
-  
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
     <ion-fab-button color="secondary2" (click)="redirectToNewHabit()">
       <ion-icon name="add"></ion-icon>

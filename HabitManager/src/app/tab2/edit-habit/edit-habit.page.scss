@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+ion-card{
+    --background: white;
+}
+
+.square-container {
+    margin-top: 8px;
+}
+
+.square {
+    width: calc(100% / 7);
+    float: left;
+    position: relative;
+    padding-bottom: calc(100% / 6);
+}
+
+.square .content {
+    // width: calc(100% - 32px);
+    // height: calc(100% - 32px);
+    border-radius: 35%;
+    margin: 8px;
+    padding: 16px;
+    position: absolute;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+.finished{
+    background-color: rgb(221, 188, 0);
+}

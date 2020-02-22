@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, NgZone } from '@angular/core';
 import { DatabaseService } from '../../database.service';
+import { Subscription } from 'rxjs';
+import { MenuService } from '../../menu.service';
 
 @Component({
   selector: 'app-habit',
@@ -13,15 +15,30 @@ export class HabitComponent implements OnInit {
   @Input() public totalDays: any;
   @Input() public daysSoFar: any;
   @Input() public dateLastDayAdded: any;
+  @Input() public iconName: any;
   
+
+  private editValue:any=false;
   private daysLeft=0;
-  constructor(public servicio:DatabaseService,public zone:NgZone) { 
+  private editHabitReference: Subscription = null;
+
+  constructor(public menu:MenuService,public servicio:DatabaseService,public zone:NgZone) { 
   }
+
 
   ngOnInit() {
     this.totalDays=Number(this.totalDays);
     this.daysSoFar=Number(this.daysSoFar);
     this.calculateDaysLeft();
+    this.subscribeToEditTaskValue();
+  }
+
+  subscribeToEditTaskValue(){
+    this.editHabitReference = this.menu.EditTask$.subscribe((value)=>{
+      this.zone.run(() => {
+        this.editValue=value;
+      });
+    });
   }
 
   calculateDaysLeft(){

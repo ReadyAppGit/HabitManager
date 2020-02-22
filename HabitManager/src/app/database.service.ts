@@ -69,17 +69,17 @@ export class DatabaseService {
 
 
   createOrReadHabitTable() {
-    this.databaseObj.executeSql('CREATE TABLE IF NOT EXISTS habit (id INTEGER PRIMARY KEY, title varchar(50),totalDays varchar(20),daysSoFar varchar(20),dateLastDayAdded varchar (50) )', [])
+    this.databaseObj.executeSql('CREATE TABLE IF NOT EXISTS habit (id INTEGER PRIMARY KEY, title varchar(50),totalDays varchar(20),daysSoFar varchar(20),dateLastDayAdded varchar (50),iconName varchar(20) )', [])
       .then(() => {
-        this.insertHabit("title", "10", "2","null");
+        // this.insertHabit("title", "10", "2","null");
       })
       .catch(e => {
         alert("error " + JSON.stringify(e))
       });
   }
 
-  insertHabit(title, totalDays, daysSoFar,dateLastDayAdded) {
-    return this.databaseObj.executeSql('INSERT INTO habit (title,totalDays,daysSoFar,dateLastDayAdded) VALUES ("' + title + '","' + totalDays + '","' + daysSoFar + '","'+dateLastDayAdded+'")', []);
+  insertHabit(title, totalDays, daysSoFar,dateLastDayAdded,iconName) {
+    return this.databaseObj.executeSql('INSERT INTO habit (title,totalDays,daysSoFar,dateLastDayAdded,iconName) VALUES ("' + title + '","' + totalDays + '","' + daysSoFar + '","'+dateLastDayAdded+'","'+iconName+'")', []);
   }
 
   getHabits() {
@@ -90,9 +90,9 @@ export class DatabaseService {
     return this.databaseObj.executeSql("UPDATE habit SET daysSoFar=daysSoFar+1,dateLastDayAdded='"+dateAdded+"' WHERE habit.id='" + habitID + "'", []);
   }
 
-  // editHabit(habitID, title, totalDays, daysSoFar) {
-  //   return this.databaseObj.executeSql("UPDATE habit SET title='" + title + "',totalDays='" + totalDays + "',daysSoFar='" + daysSoFar + "'  WHERE task.id='" + habitID + "'", []);
-  // }
+  editHabit(habitID, title,iconName) {
+    return this.databaseObj.executeSql("UPDATE habit SET title='" + title + "',title='" + title + "',iconName='"+iconName+"'  WHERE habit.id='" + habitID + "'", []);
+  }
 
   // deleteHabit(habitID) {
   //   return this.databaseObj.executeSql("DELETE FROM habit WHERE habit.id='" + habitID + "'", []);

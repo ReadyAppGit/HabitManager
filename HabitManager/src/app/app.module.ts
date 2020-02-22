@@ -21,7 +21,7 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
-    AppRoutingModule,
+    AppRoutingModule
     // SuperTabsModule.forRoot(),
   ],
   providers: [

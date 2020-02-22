@@ -2,11 +2,11 @@
   <ion-card style="margin:0 20px 0 20px;">
     <ion-card-content>
       <ion-item>
-        <ion-icon name="book" slot="start"></ion-icon>
+        <ion-icon [name]="iconName" slot="start"></ion-icon>
         <ion-card-title text-center>{{title}}</ion-card-title>
         <!-- <ion-button color="primaryVariant" fill="outline" slot="end">edit</ion-button> -->
         <ion-buttons slot="end">
-          <ion-button color="primaryVariant">
+          <ion-button color="primaryVariant" *ngIf="editValue" color="primaryVariant" [routerLink]="['edit-habit',[id,title,totalDays,daysSoFar,dateLastDayAdded,iconName]]">
             <ion-icon name="create" style="font-size: x-large;"></ion-icon>
           </ion-button>
         </ion-buttons>

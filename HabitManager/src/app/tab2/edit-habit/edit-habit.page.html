@@ -6,10 +6,10 @@
       </ion-button>
     </ion-buttons>
 
-    <ion-title class="ion-text-center">New Habit</ion-title>
+    <ion-title class="ion-text-center">Edit Habit</ion-title>
 
     <ion-buttons slot="end">
-      <ion-button (click)="createHabit()">
+      <ion-button (click)="editHabit()">
         <ion-icon slot="icon-only" name="checkmark"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -18,28 +18,26 @@
 
 <ion-content>
 
-
   <hr>
   <ion-card style="margin:0 20px 0 20px;">
     <ion-card-content>
       <ion-item>
         <ion-icon [name]="iconName" slot="start" (click)="presentPopover($event)"></ion-icon>
         <ion-item>
-          <ion-label position="floating">New Habit</ion-label>
+          <ion-label position="floating">Edit Habit</ion-label>
           <ion-input [(ngModel)]="title"></ion-input>
         </ion-item>
       </ion-item>
       <ion-label position="floating">Total days</ion-label>
-      <ion-input [(ngModel)]="totalDays" (ngModelChange)="validateSize()" type="number"></ion-input>
+      <ion-input disabled [(ngModel)]="totalDays" (ngModelChange)="validateSize()" type="number"></ion-input>
 
       <div class="square-container">
-        <div class="square" *ngFor="let day of [].constructor(totalDays);">
-          <div class="content"></div>
+        <div class="square" *ngFor="let day of [].constructor(totalDays);let i=index;">
+          <div [ngClass]="{'finished':i+1<=daysSoFar}" class="content"></div>
         </div>
       </div>
 
       <ion-label>{{daysSoFar}}/{{totalDays}}</ion-label>
     </ion-card-content>
   </ion-card>
-
 </ion-content>

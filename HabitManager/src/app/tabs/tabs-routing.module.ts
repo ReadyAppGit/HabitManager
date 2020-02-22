@@ -10,6 +10,7 @@ import { NewHabitPage } from '../tab2/new-habit/new-habit.page';
 
 
 import {NewRoutinePage} from '../tab3/new-routine/new-routine.page';
+import { EditHabitPage } from '../tab2/edit-habit/edit-habit.page';
 
 
 const routes: Routes = [
@@ -46,8 +47,8 @@ const routes: Routes = [
             component: NewHabitPage
           },
           {
-            path: 'edit-task',
-            component: EditTaskPage
+            path: 'edit-habit',
+            component: EditHabitPage
           }
         ]
       },

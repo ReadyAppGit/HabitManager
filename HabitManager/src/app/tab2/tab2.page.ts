@@ -1,6 +1,7 @@
 import { Component, NgZone } from '@angular/core';
 import { DatabaseService } from '../database.service';
 import { NavController } from '@ionic/angular';
+import { MenuService } from '../menu.service';
 
 @Component({
   selector: 'app-tab2',
@@ -10,10 +11,12 @@ import { NavController } from '@ionic/angular';
 export class Tab2Page {
 
   private habits;
-  constructor(public navCtrl:NavController,public servicio:DatabaseService, public zone:NgZone) { }
+  private editValue;
+  constructor(public menu:MenuService,public navCtrl:NavController,public servicio:DatabaseService, public zone:NgZone) { }
 
 
   ionViewDidEnter() {
+    this.editValue=true;
     this.listhabitsFromDB();
   }
 
@@ -44,6 +47,10 @@ export class Tab2Page {
     this.navCtrl.navigateRoot("/tabs/tab2/new-habit");
   }
 
+  changeEditOption(){
+    this.menu.changeEditOption(this.editValue)
+    this.editValue=!this.editValue;
+  }
   
   
 }

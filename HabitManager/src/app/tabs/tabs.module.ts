@@ -16,6 +16,8 @@ import { HabitPageModule } from '../tab2/habit/habit.module';
 import { NewHabitPage } from '../tab2/new-habit/new-habit.page';
 
 import { NewRoutinePage } from '../tab3/new-routine/new-routine.page';
+import { EditHabitPage } from '../tab2/edit-habit/edit-habit.page';
+import { PopoverPage } from '../tab2/popover/popover.page';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { NewRoutinePage } from '../tab3/new-routine/new-routine.page';
     HabitPageModule
     // SuperTabsModule
   ],
-  declarations: [TabsPage,Tab1Page,NewTaskPage,EditTaskPage,Tab2Page,NewHabitPage,NewRoutinePage]
+  entryComponents:[PopoverPage],
+  declarations: [PopoverPage,TabsPage,Tab1Page,NewTaskPage,EditTaskPage,Tab2Page,NewHabitPage,NewRoutinePage,EditHabitPage]
 })
 export class TabsPageModule {}

@@ -4,7 +4,7 @@
       <strong>My Habits</strong>
     </ion-title>
     <ion-buttons slot="primary">
-      <ion-button>
+      <ion-button (click)="changeEditOption()">
         <ion-icon  name="create"></ion-icon>
       </ion-button>
       <ion-button>
@@ -18,7 +18,7 @@
 </ion-header> 
 
 <ion-content color="light">
-  <app-habit *ngFor="let habit of habits" [id]="habit.id" [title]="habit.title" [totalDays]="habit.totalDays" [daysSoFar]="habit.daysSoFar" [dateLastDayAdded]="habit.dateLastDayAdded" ></app-habit>
+  <app-habit *ngFor="let habit of habits" [iconName]="habit.iconName" [id]="habit.id" [title]="habit.title" [totalDays]="habit.totalDays" [daysSoFar]="habit.daysSoFar" [dateLastDayAdded]="habit.dateLastDayAdded" ></app-habit>
 
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
     <ion-fab-button color="secondary2" (click)="redirectToNewHabit()">

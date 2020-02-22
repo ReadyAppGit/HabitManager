@@ -1,6 +1,8 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, PopoverController } from '@ionic/angular';
 import { DatabaseService } from '../../database.service';
+import { PopoverPage } from '../popover/popover.page';
+
 
 @Component({
   selector: 'app-new-habit',
@@ -14,9 +16,9 @@ export class NewHabitPage implements OnInit {
   private totalDays: number;
   private daysSoFar: any = "0";
   private dateLastDayAdded: any = "null";
+  private iconName:any="book";
 
-
-  constructor(public navCtrl:NavController,public servicio:DatabaseService) { }
+  constructor(public popoverController:PopoverController,public navCtrl:NavController,public servicio:DatabaseService) { }
 
   ngOnInit() {
     this.totalDays = 1;
@@ -36,7 +38,7 @@ export class NewHabitPage implements OnInit {
   }
 
   createHabit(){
-    this.servicio.insertHabit(this.title, this.totalDays, this.daysSoFar, this.dateLastDayAdded)
+    this.servicio.insertHabit(this.title, this.totalDays, this.daysSoFar, this.dateLastDayAdded,this.iconName)
       .then(() => {
         alert('Row Inserted!');
         this.navCtrl.navigateRoot("/tabs/tab2");
@@ -45,4 +47,25 @@ export class NewHabitPage implements OnInit {
         alert("error " + JSON.stringify(e))
       });
   }
+
+
+
+  async presentPopover(ev: any) {
+    const popover = await this.popoverController.create({
+      component: PopoverPage,
+      event: ev,
+      translucent: true
+    });
+
+    popover.onDidDismiss()
+    .then((data)=>{
+      console.log("desde edit habit");
+      if(data.data){
+        this.iconName=data.data;
+      }
+    })
+    return await popover.present();
+  }
+
+
 }
